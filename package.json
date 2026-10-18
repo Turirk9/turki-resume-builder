@@ -1,0 +1,13 @@
+{
+  "name": "turki-alkarnaf-resume-builder",
+  "version": "1.0.0",
+  "description": "منشئ السيرة الذاتية العربية - قالب جاهز للتعديل المباشر والتصدير PDF",
+  "author": "Turki Alkarnaf",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "dev": "python -m http.server 5175"
+  },
+  "keywords": ["resume", "cv", "arabic", "rtl", "vanilla-js", "pdf", "no-backend"],
+  "license": "MIT"
+}

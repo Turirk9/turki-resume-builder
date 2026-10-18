@@ -1,0 +1,432 @@
+/* ===== ورقة السيرة: مقاس A4 حقيقي، مستقلة تمامًا عن ثيم التطبيق ===== */
+.cv-page {
+  --accent: #0f766e;
+  --ink: #16202e;
+  --ink-soft: #4a5768;
+  --rule: #dfe4ea;
+  --gap: 16px;
+  --fs: 13.2px;
+
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 14mm;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: var(--cv-font, 'IBM Plex Sans Arabic'), 'Segoe UI', Tahoma, sans-serif;
+  font-size: calc(var(--fs) * var(--fscale, 1));
+  line-height: 1.65;
+  box-shadow: 0 6px 28px rgba(15, 23, 42, 0.16);
+  border-radius: 2px;
+}
+
+/* كثافات العرض */
+.cv-page.density-comfortable { --gap: 20px; --fs: 13.8px; }
+.cv-page.density-normal { --gap: 16px; --fs: 13.2px; }
+.cv-page.density-compact { --gap: 11px; --fs: 12.3px; padding: 12mm 12mm; }
+
+.cv-page a { color: inherit; text-decoration: none; }
+.cv-empty {
+  display: grid; place-items: center; min-height: 240px;
+  color: #94a3b8; font-size: 14px; text-align: center; padding: 40px;
+}
+
+/* ===== الترويسة ===== */
+.cv-name-block { min-width: 0; }
+.cv-name {
+  margin: 0;
+  font-family: var(--cv-font-display, var(--cv-font, 'Noto Kufi Arabic')), sans-serif;
+  font-size: 26px; font-weight: 700; line-height: 1.3;
+  color: var(--accent);
+}
+.cv-jobtitle { margin: 2px 0 0; font-size: 15px; color: var(--ink-soft); font-weight: 500; }
+.cv-head { margin-bottom: var(--gap); }
+.cv-contact {
+  margin: 8px 0 0; font-size: 12.2px; color: var(--ink-soft);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
+}
+.cv-dot { margin: 0 7px; opacity: 0.45; }
+.cv-contact-list { list-style: none; margin: 0; padding: 0; font-size: 12.2px; }
+.cv-contact-list li { margin-bottom: 5px; word-break: break-word; }
+
+/* ===== الأقسام ===== */
+.cv-section { margin-bottom: var(--gap); }
+.cv-h2 {
+  margin: 0 0 8px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.4px;
+  color: var(--accent); text-transform: uppercase;
+}
+.cv-summary { margin: 0; color: var(--ink-soft); }
+
+.cv-item { margin-bottom: calc(var(--gap) * 0.62); break-inside: avoid; }
+.cv-item:last-child { margin-bottom: 0; }
+.cv-item-tight { margin-bottom: calc(var(--gap) * 0.45); }
+.cv-item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.cv-role { margin: 0; font-size: 14px; font-weight: 600; }
+.cv-org { margin: 1px 0 0; font-size: 12.6px; color: var(--ink-soft); }
+.cv-dates {
+  margin: 0; font-size: 11.6px; color: var(--ink-soft);
+  text-align: end; white-space: nowrap; flex: none;
+}
+.cv-dur { display: block; opacity: 0.75; font-size: 10.8px; }
+.cv-note { margin: 3px 0 0; font-size: 12.4px; color: var(--ink-soft); }
+.cv-link { margin: 2px 0 0; font-size: 11.5px; color: var(--accent); }
+
+.cv-bullets { margin: 6px 0 0; padding-inline-start: 17px; }
+.cv-bullets li { margin-bottom: 2px; }
+.cv-list { list-style: none; margin: 0; padding: 0; font-size: 12.6px; }
+.cv-list li { margin-bottom: 4px; }
+.cv-muted { color: var(--ink-soft); }
+.cv-langs li { display: flex; justify-content: space-between; gap: 10px; }
+
+.cv-skills-inline { margin: 0; font-size: 12.8px; color: var(--ink-soft); }
+.cv-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+.cv-chips li {
+  font-size: 11.6px; padding: 2px 9px; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, #fff);
+  color: color-mix(in srgb, var(--accent) 85%, #000);
+}
+
+/* ===================== قالب: كلاسيكي ===================== */
+.tpl-classic .cv-head {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+.tpl-classic .cv-h2 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 4px;
+}
+
+/* ===================== قالب: عصري ===================== */
+.tpl-modern .cv-head-modern {
+  background: var(--accent);
+  color: #fff;
+  margin: -15mm -14mm var(--gap);
+  padding: 16mm 14mm 9mm;
+}
+.tpl-modern .cv-name { color: #fff; }
+.tpl-modern .cv-jobtitle { color: rgba(255, 255, 255, 0.88); }
+.tpl-modern .cv-cols {
+  display: grid;
+  grid-template-columns: 0.85fr 2fr;
+  gap: calc(var(--gap) * 1.4);
+  align-items: start;
+}
+.tpl-modern .cv-aside {
+  background: color-mix(in srgb, var(--accent) 7%, #fff);
+  border-radius: 10px;
+  padding: 13px 14px;
+}
+.tpl-modern .cv-aside .cv-section:last-child { margin-bottom: 0; }
+.tpl-modern .cv-aside .cv-h2 { font-size: 11.8px; }
+.tpl-modern .cv-main .cv-h2 {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 4px;
+}
+.tpl-modern.density-compact .cv-head-modern { margin: -12mm -12mm var(--gap); padding: 13mm 12mm 8mm; }
+
+/* ===================== قالب: بسيط ===================== */
+.tpl-minimal { padding: 18mm 16mm; }
+.tpl-minimal .cv-head-minimal { text-align: center; margin-bottom: calc(var(--gap) * 1.2); }
+.tpl-minimal .cv-name {
+  font-size: 30px; font-weight: 400; letter-spacing: 1px; color: var(--ink);
+}
+.tpl-minimal .cv-jobtitle {
+  font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-top: 6px;
+}
+.tpl-minimal .cv-contact { justify-content: center; }
+.tpl-minimal .cv-lead {
+  text-align: center; max-width: 46em; margin: 0 auto calc(var(--gap) * 1.1);
+  font-size: 13px;
+}
+.tpl-minimal .cv-h2 {
+  text-align: center; color: var(--ink); letter-spacing: 2.5px;
+  border-top: 1px solid var(--rule); padding-top: 9px; margin-bottom: 11px;
+}
+.tpl-minimal .cv-role { font-weight: 600; }
+.tpl-minimal .cv-skills-inline { text-align: center; }
+.tpl-minimal.density-compact { padding: 13mm 13mm; }
+
+
+/* ===================== قالب: تنفيذي ===================== */
+.tpl-executive { padding: 16mm 15mm; }
+.tpl-executive .cv-head {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 11px; margin-bottom: calc(var(--gap) * 1.1);
+}
+.tpl-executive .cv-name {
+  color: var(--ink); font-weight: 700; letter-spacing: -0.3px; font-size: 28px;
+}
+.tpl-executive .cv-jobtitle {
+  color: var(--accent); font-weight: 600; letter-spacing: 0.6px; font-size: 14px;
+}
+.tpl-executive .cv-contact {
+  margin-top: 10px; padding: 7px 11px; border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 7%, #fff);
+}
+.tpl-executive .cv-h2 {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--ink); font-size: 12px; letter-spacing: 1.6px;
+}
+.tpl-executive .cv-h2::before {
+  content: ''; width: 12px; height: 12px; flex: none;
+  background: var(--accent); border-radius: 2px;
+}
+.tpl-executive .cv-h2::after {
+  content: ''; flex: 1; height: 1px; background: var(--rule);
+}
+.tpl-executive .cv-role { font-size: 14.5px; }
+.tpl-executive .cv-org { color: var(--accent); font-weight: 500; }
+
+/* ===================== قالب: خط زمني ===================== */
+.tpl-timeline .cv-head {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 10px;
+}
+.tpl-timeline .cv-h2 {
+  display: inline-block;
+  background: color-mix(in srgb, var(--accent) 10%, #fff);
+  color: var(--accent);
+  padding: 3px 11px; border-radius: 999px; letter-spacing: 0.6px;
+}
+.tpl-timeline .cv-section .cv-item {
+  position: relative;
+  padding-inline-start: 20px;
+  border-inline-start: 2px solid color-mix(in srgb, var(--accent) 22%, #fff);
+  padding-bottom: 4px;
+}
+.tpl-timeline .cv-section .cv-item::before {
+  content: '';
+  position: absolute; inset-inline-start: -6px; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2.5px #fff;
+}
+.tpl-timeline .cv-item:last-child { border-inline-start-color: transparent; }
+.tpl-timeline .cv-dates { font-weight: 600; color: var(--accent); }
+.tpl-timeline .cv-dur { font-weight: 400; color: var(--ink-soft); }
+  .cv-h2 { break-after: avoid; }
+
+/* ===================== قالب: إبداعي ===================== */
+.tpl-creative .cv-head-modern {
+  background: none; color: inherit;
+  margin: 0 0 var(--gap); padding: 0 0 10px;
+  border-bottom: 4px solid var(--accent);
+}
+.tpl-creative .cv-name {
+  color: var(--accent); font-size: 32px; font-weight: 700; line-height: 1.15;
+}
+.tpl-creative .cv-jobtitle { color: var(--ink-soft); font-size: 14px; letter-spacing: 1px; }
+.tpl-creative .cv-cols { grid-template-columns: 0.9fr 2fr; }
+.tpl-creative .cv-aside {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px 15px;
+}
+.tpl-creative .cv-aside .cv-h2 { color: rgba(255, 255, 255, 0.95); }
+.tpl-creative .cv-aside .cv-muted,
+.tpl-creative .cv-aside a { color: rgba(255, 255, 255, 0.86); }
+.tpl-creative .cv-aside .cv-chips li {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.tpl-creative .cv-main .cv-h2 {
+  border: 0; color: var(--accent);
+  font-size: 13px; letter-spacing: 1.2px;
+}
+.tpl-creative .cv-main .cv-role { font-size: 15px; }
+
+/* ===================== قالب: أكاديمي ===================== */
+.tpl-academic { padding: 18mm 17mm; }
+.tpl-academic .cv-head { text-align: center; border-bottom: 1px solid var(--ink); padding-bottom: 9px; }
+.tpl-academic .cv-name { color: var(--ink); font-weight: 700; font-size: 25px; letter-spacing: 0; }
+.tpl-academic .cv-jobtitle { color: var(--ink-soft); font-size: 13.5px; font-style: italic; }
+.tpl-academic .cv-contact { justify-content: center; font-size: 11.6px; }
+.tpl-academic .cv-h2 {
+  color: var(--ink); font-size: 12px; letter-spacing: 2px;
+  border-bottom: 1px solid var(--ink); padding-bottom: 3px; margin-bottom: 9px;
+}
+.tpl-academic .cv-summary { text-align: justify; }
+.tpl-academic .cv-role { font-size: 13.6px; font-weight: 700; }
+.tpl-academic .cv-org { font-style: italic; }
+.tpl-academic .cv-dates { font-variant-numeric: tabular-nums; }
+.tpl-academic .cv-bullets { margin-top: 4px; }
+
+/* ===================== قالب: تقني ===================== */
+.tpl-tech .cv-head-modern {
+  background: color-mix(in srgb, var(--accent) 9%, #fff);
+  color: inherit;
+  margin: -15mm -14mm var(--gap);
+  padding: 14mm 14mm 9mm;
+  border-bottom: 2px solid var(--accent);
+}
+.tpl-tech .cv-name { color: var(--ink); font-size: 27px; }
+.tpl-tech .cv-jobtitle { color: var(--accent); font-weight: 600; }
+.tpl-tech .cv-jobtitle::before { content: '> '; opacity: 0.6; }
+.tpl-tech .cv-cols { grid-template-columns: 0.8fr 2fr; }
+.tpl-tech .cv-aside { background: #fff; border: 1px solid var(--rule); border-radius: 10px; }
+.tpl-tech .cv-h2 { font-size: 12px; letter-spacing: 0.8px; }
+.tpl-tech .cv-h2::before { content: '# '; opacity: 0.55; }
+.tpl-tech .cv-main .cv-h2 { border-bottom: 1px dashed var(--rule); }
+.tpl-tech .cv-chips li {
+  background: #fff; border: 1px solid color-mix(in srgb, var(--accent) 35%, #fff);
+  color: var(--ink);
+}
+.tpl-tech .cv-dates,
+.tpl-tech .cv-link,
+.tpl-tech .cv-contact-list { font-family: 'Consolas', 'Courier New', monospace; font-size: 11.2px; }
+.tpl-tech.density-compact .cv-head-modern { margin: -12mm -12mm var(--gap); padding: 11mm 12mm 8mm; }
+
+
+/* ===================== قالب: متوافق ATS ===================== */
+.tpl-ats { --accent: #000000; padding: 16mm 15mm; }
+.tpl-ats .cv-name { color: #000; font-size: 24px; font-weight: 700; }
+.tpl-ats .cv-jobtitle { color: #222; font-size: 14px; }
+.tpl-ats .cv-head { border-bottom: 1px solid #000; padding-bottom: 8px; }
+.tpl-ats .cv-h2 {
+  color: #000; font-size: 13px; letter-spacing: 0.5px;
+  border-bottom: 1px solid #999; padding-bottom: 3px; text-transform: none;
+}
+.tpl-ats .cv-role { color: #000; }
+.tpl-ats .cv-org, .tpl-ats .cv-dates, .tpl-ats .cv-note, .tpl-ats .cv-summary { color: #222; }
+.tpl-ats .cv-chips li { background: none; border: 0; padding: 0; color: #222; }
+.tpl-ats .cv-chips li::after { content: '،'; }
+.tpl-ats .cv-chips li:last-child::after { content: ''; }
+.tpl-ats .cv-dur { display: none; }
+
+/* ===================== قالب: طالب ===================== */
+.tpl-student .cv-head {
+  background: color-mix(in srgb, var(--accent) 8%, #fff);
+  margin: -15mm -14mm var(--gap);
+  padding: 15mm 14mm 10px;
+  border-bottom: 3px solid var(--accent);
+}
+.tpl-student .cv-name { font-size: 27px; }
+.tpl-student .cv-h2 {
+  display: inline-block; background: var(--accent); color: #fff;
+  padding: 3px 12px; border-radius: 5px; letter-spacing: 0.4px;
+}
+.tpl-student .cv-role { font-size: 14.5px; }
+.tpl-student .cv-chips li {
+  background: color-mix(in srgb, var(--accent) 14%, #fff);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, #fff);
+}
+.tpl-student.density-compact .cv-head { margin: -12mm -12mm var(--gap); padding: 12mm 12mm 9px; }
+
+/* ===================== قالب: شركات ===================== */
+.tpl-corporate .cv-head-modern {
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 62%, #000));
+  color: #fff; margin: -15mm -14mm var(--gap); padding: 15mm 14mm 10mm;
+}
+.tpl-corporate .cv-name { color: #fff; font-size: 27px; letter-spacing: -0.2px; }
+.tpl-corporate .cv-jobtitle { color: rgba(255, 255, 255, 0.9); letter-spacing: 1.5px; font-size: 13px; }
+.tpl-corporate .cv-cols { grid-template-columns: 1fr 2.1fr; }
+.tpl-corporate .cv-aside {
+  background: #fff; border: 1px solid var(--rule); border-inline-start: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0; padding: 14px;
+}
+.tpl-corporate .cv-h2 {
+  color: var(--ink); border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px; font-size: 12px;
+}
+.tpl-corporate .cv-role { font-size: 14px; }
+.tpl-corporate .cv-org { color: var(--accent); font-weight: 600; }
+.tpl-corporate.density-compact .cv-head-modern { margin: -12mm -12mm var(--gap); padding: 12mm 12mm 8mm; }
+
+/* ===================== قالب: راقٍ ===================== */
+.tpl-elegant { padding: 20mm 18mm; }
+.tpl-elegant .cv-head-minimal { text-align: center; margin-bottom: calc(var(--gap) * 1.4); }
+.tpl-elegant .cv-name {
+  font-size: 32px; font-weight: 300; letter-spacing: 6px; color: var(--ink);
+  text-transform: none;
+}
+.tpl-elegant .cv-jobtitle {
+  font-size: 11.5px; letter-spacing: 5px; color: var(--accent);
+  margin-top: 10px; text-transform: uppercase;
+}
+.tpl-elegant .cv-head-minimal::after {
+  content: ''; display: block; width: 46px; height: 1px;
+  background: var(--accent); margin: 14px auto 0;
+}
+.tpl-elegant .cv-contact { justify-content: center; font-size: 11.4px; letter-spacing: 0.4px; }
+.tpl-elegant .cv-h2 {
+  text-align: center; color: var(--ink); font-weight: 400;
+  letter-spacing: 4px; font-size: 11px; border: 0; margin-bottom: 13px;
+}
+.tpl-elegant .cv-lead { text-align: center; font-size: 12.8px; color: var(--ink-soft); }
+.tpl-elegant .cv-item { border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+.tpl-elegant .cv-item:last-child { border-bottom: 0; }
+.tpl-elegant .cv-role { font-weight: 500; letter-spacing: 0.3px; }
+.tpl-elegant .cv-skills-inline { text-align: center; letter-spacing: 0.5px; }
+
+/* ===================== قالب: مضغوط (عمودان) ===================== */
+.cv-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--gap); align-items: start; }
+.cv-duo-col > .cv-section:last-child { margin-bottom: 0; }
+.tpl-compact { --fs: 12px; padding: 13mm 12mm; }
+.tpl-compact .cv-head-compact {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  border-bottom: 2px solid var(--accent); padding-bottom: 9px; margin-bottom: var(--gap);
+}
+.tpl-compact .cv-head-compact .cv-contact { justify-content: flex-end; max-width: 55%; margin: 0; }
+.tpl-compact .cv-name { font-size: 23px; }
+.tpl-compact .cv-jobtitle { font-size: 13px; }
+.tpl-compact .cv-h2 {
+  font-size: 11px; border-bottom: 1px solid var(--rule); padding-bottom: 3px;
+}
+.tpl-compact .cv-role { font-size: 12.8px; }
+.tpl-compact .cv-bullets { padding-inline-start: 15px; }
+.tpl-compact .cv-dur { display: none; }
+
+/* ===================== قالب: جريء ===================== */
+.tpl-bold { padding: 0 0 15mm; }
+.tpl-bold .cv-head {
+  background: var(--accent); color: #fff;
+  padding: 17mm 14mm 11mm; margin-bottom: var(--gap);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 0 100%);
+}
+.tpl-bold .cv-name { color: #fff; font-size: 34px; font-weight: 700; line-height: 1.1; }
+.tpl-bold .cv-jobtitle {
+  color: rgba(255, 255, 255, 0.92); font-size: 15px; font-weight: 500;
+  margin-top: 5px; letter-spacing: 0.6px;
+}
+.tpl-bold .cv-contact { color: rgba(255, 255, 255, 0.88); margin-top: 11px; }
+.tpl-bold .cv-section { padding-inline: 14mm; }
+.tpl-bold .cv-h2 {
+  font-size: 15px; font-weight: 700; letter-spacing: 0; text-transform: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.tpl-bold .cv-h2::after { content: ''; flex: 1; height: 3px; background: color-mix(in srgb, var(--accent) 22%, #fff); border-radius: 2px; }
+.tpl-bold .cv-role { font-size: 15px; font-weight: 700; }
+.tpl-bold .cv-chips li { background: var(--accent); color: #fff; font-weight: 600; }
+.tpl-bold.density-compact .cv-head { padding: 13mm 12mm 9mm; }
+.tpl-bold.density-compact .cv-section { padding-inline: 12mm; }
+/* ===================== الطباعة / PDF ===================== */
+@page { size: A4; margin: 0; }
+
+@media print {
+  .app-bar, .mobile-tabs, .editor-pane, .design-bar, .toast, .privacy-note { display: none !important; }
+
+  html, body { background: #fff !important; margin: 0; padding: 0; }
+  .layout { display: block !important; min-height: 0 !important; }
+  .preview-pane { display: block !important; padding: 0 !important; position: static !important; }
+  .stage { display: block !important; height: auto !important; padding: 0 !important; overflow: visible !important; }
+
+  .cv-page {
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm;
+    margin: 0 !important;
+  }
+
+  /* ضروري لطباعة خلفيات القالب العصري */
+  .cv-page, .cv-page * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .cv-section, .cv-item { break-inside: avoid; }
+  .cv-h2 { break-after: avoid; }
+}

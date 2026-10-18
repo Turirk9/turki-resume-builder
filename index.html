@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>سِيَر — أنشئ سيرتك الذاتية العربية باحتراف</title>
+<meta name="description" content="سِيَر: منصة عربية لإنشاء السيرة الذاتية — ١٤ قالبًا احترافيًا، معاينة مباشرة، تحليل قوة السيرة، وتصدير PDF جاهز للطباعة. بدون تسجيل، وبياناتك لا تغادر متصفحك." />
+<meta name="author" content="أصيل العتيبي" />
+<meta name="theme-color" content="#0b0910" />
+<meta property="og:title" content="سِيَر — باني السيرة الذاتية العربية" />
+<meta property="og:description" content="١٤ قالبًا احترافيًا، معاينة مباشرة، وتصدير PDF — بدون تسجيل ودون أن تغادر بياناتك متصفحك." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b0910'/%3E%3Cpath d='M20 15h18l8 8v26a3 3 0 0 1-3 3H20a3 3 0 0 1-3-3V18a3 3 0 0 1 3-3z' fill='%23d9a441'/%3E%3Cpath d='M24 28h14M24 35h11M24 42h8' stroke='%230b0910' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/tokens.css?v=12" />
+<link rel="stylesheet" href="assets/app.css?v=12" />
+<link rel="stylesheet" href="assets/landing.css?v=12" />
+<link rel="stylesheet" href="assets/resume.css?v=12" />
+</head>
+<body data-view="landing" data-pane="edit">
+
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+<!-- ===================== التنقّل ===================== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#/" aria-label="سِيَر — الرئيسية">
+      <span class="nav-logo" aria-hidden="true"></span>
+      <span class="nav-name">سِيَر</span>
+    </a>
+
+    <nav class="nav-links" aria-label="التنقّل الرئيسي">
+      <a href="#/" data-nav="landing">الرئيسية</a>
+      <a href="#/templates" data-nav="templates">القوالب</a>
+      <a href="#/builder" data-nav="builder">إنشاء سيرة</a>
+      <button type="button" id="open-library" class="nav-linkbtn">سيرتي</button>
+    </nav>
+
+    <div class="nav-actions">
+      <span class="nav-credit">تم إنشاؤه بواسطة <strong>أصيل العتيبي</strong></span>
+      <button class="icon-only" id="theme-toggle" aria-label="تبديل المظهر"></button>
+      <a class="btn primary sm nav-cta" href="#/builder">ابدأ مجانًا</a>
+      <button class="icon-only burger" id="nav-burger" aria-label="القائمة" aria-expanded="false"></button>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="nav-drawer" hidden>
+    <a href="#/" data-nav="landing">الرئيسية</a>
+    <a href="#/templates" data-nav="templates">القوالب</a>
+    <a href="#/builder" data-nav="builder">إنشاء سيرة</a>
+    <button type="button" class="nav-linkbtn" data-open-library>سيرتي المحفوظة</button>
+    <span class="nav-drawer-credit">تم إنشاؤه بواسطة <strong>أصيل العتيبي</strong></span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== صفحة الهبوط ===================== -->
+<section class="view view-landing" data-view-name="landing">
+
+  <div class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="pill reveal" data-reveal="1">
+          <span class="pill-dot"></span> عربي بالكامل · بدون تسجيل · بياناتك لا تغادر جهازك
+        </span>
+        <h1 class="hero-title reveal" data-reveal="2">
+          سيرتك الذاتية تستحق
+          <span class="grad">تصميمًا يليق بها</span>
+        </h1>
+        <p class="hero-sub reveal" data-reveal="3">
+          اكتب بياناتك مرة واحدة، وشاهد سيرتك تتكوّن أمامك لحظة بلحظة.
+          بدّل بين ١٤ قالبًا احترافيًا بضغطة، وحمّلها PDF جاهزًا للإرسال — كل ذلك داخل متصفحك.
+        </p>
+        <div class="hero-cta reveal" data-reveal="4">
+          <a class="btn primary lg" href="#/builder" id="hero-start">أنشئ سيرتي الآن</a>
+          <a class="btn ghost lg" href="#/templates">تصفّح القوالب</a>
+        </div>
+        <ul class="hero-facts reveal" data-reveal="5">
+          <li><strong>١٤</strong> قالبًا</li>
+          <li><strong>٥</strong> خطوط عربية</li>
+          <li><strong>٠</strong> ريال</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- المزايا -->
+  <section class="band">
+    <div class="container">
+      <header class="band-head reveal">
+        <span class="eyebrow">لماذا سِيَر</span>
+        <h2>كل ما تحتاجه لسيرة تُقرأ فعلًا</h2>
+        <p>أدوات السير الذاتية الأجنبية تكسر العربية وتطلب اشتراكًا لتنزيل ملفك. سِيَر بُني للعربية أولًا.</p>
+      </header>
+      <div class="feature-grid" id="feature-grid"></div>
+    </div>
+  </section>
+
+  <!-- كيف يعمل -->
+  <section class="band band-alt">
+    <div class="container">
+      <header class="band-head reveal">
+        <span class="eyebrow">ثلاث خطوات</span>
+        <h2>من صفحة بيضاء إلى سيرة جاهزة</h2>
+      </header>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+
+  <!-- لمحة القوالب -->
+  <section class="band">
+    <div class="container">
+      <header class="band-head reveal">
+        <span class="eyebrow">القوالب</span>
+        <h2>أربعة عشر قالبًا مختلفًا فعلًا</h2>
+        <p>ليست ألوانًا متبدّلة — لكل قالب تخطيط وترتيب أقسام وتايبوغرافي خاص به.</p>
+      </header>
+      <div class="tpl-rail" id="tpl-rail"></div>
+      <div class="band-cta reveal">
+        <a class="btn primary" href="#/templates">شاهد كل القوالب</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- نداء أخير -->
+  <section class="cta-final">
+    <div class="container cta-box reveal">
+      <h2>سيرتك على بعد خمس دقائق</h2>
+      <p>ابدأ بمثال جاهز، عدّله، وحمّله PDF. بلا حساب ولا اشتراك.</p>
+      <a class="btn primary lg" href="#/builder">ابدأ الآن مجانًا</a>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="container foot-inner">
+      <span class="foot-brand">سِيَر</span>
+      <span>تم إنشاؤه بواسطة <strong>أصيل العتيبي</strong></span>
+      <span class="foot-sep">·</span>
+      <span>بياناتك تبقى في متصفحك</span>
+    </div>
+  </footer>
+</section>
+
+<!-- ===================== معرض القوالب ===================== -->
+<section class="view view-templates" data-view-name="templates">
+  <div class="container">
+    <header class="page-head">
+      <span class="eyebrow">معرض القوالب</span>
+      <h1>اختر القالب الذي يشبهك</h1>
+      <p>كل معاينة هنا هي القالب الحقيقي مرسومًا ببيانات نموذجية — لا صور تقريبية.</p>
+    </header>
+
+    <div class="gallery-bar">
+      <div class="search">
+        <span class="search-ico" id="search-ico"></span>
+        <input type="search" id="tpl-search" placeholder="ابحث باسم القالب أو وصفه…" aria-label="بحث في القوالب" />
+        <button type="button" class="search-clear" id="tpl-search-clear" hidden aria-label="مسح البحث"></button>
+      </div>
+      <div class="filters" id="tpl-filters" role="tablist" aria-label="تصنيفات القوالب"></div>
+      <label class="ats-switch">
+        <input type="checkbox" id="ats-only" />
+        <span>متوافق ATS فقط</span>
+      </label>
+    </div>
+
+    <div class="tpl-grid" id="tpl-grid"></div>
+    <div class="empty-state" id="tpl-empty" hidden></div>
+  </div>
+</section>
+
+<!-- ===================== منشئ السيرة ===================== -->
+<section class="view view-builder" data-view-name="builder">
+
+  <nav class="mobile-tabs" aria-label="تبديل العرض">
+    <button data-pane="edit" class="active" type="button">التحرير</button>
+    <button data-pane="preview" type="button">المعاينة</button>
+  </nav>
+
+  <div class="builder-bar">
+    <div class="bb-left">
+      <button class="btn ghost sm" id="doc-menu" aria-haspopup="true">
+        <span class="doc-name" id="doc-name">سيرتي</span>
+      </button>
+      <span class="saved-hint" id="saved-hint">محفوظة</span>
+    </div>
+    <div class="bb-right">
+      <button class="btn sm" id="sample">مثال</button>
+      <button class="btn sm" id="import">استيراد</button>
+      <input type="file" id="import-file" accept="application/json" hidden />
+      <button class="btn sm" id="export">تصدير JSON</button>
+      <button class="btn sm" id="share">مشاركة</button>
+      <button class="btn primary sm" id="print">تحميل PDF</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="editor-pane">
+      <div class="score-card" id="score-card" data-tone="low">
+        <div class="score-head">
+          <div>
+            <span class="score-label">قوة السيرة</span>
+            <strong class="score-num" id="score-num">٠٪</strong>
+          </div>
+          <span class="score-level" id="score-level">تحتاج عملًا</span>
+        </div>
+        <div class="score-track"><div class="score-bar" id="score-bar"></div></div>
+        <div class="score-groups" id="score-groups"></div>
+        <div class="score-tips" id="score-tips"></div>
+      </div>
+
+      <form id="form" autocomplete="on" novalidate></form>
+      <p class="privacy-note" id="privacy-note"></p>
+    </div>
+
+    <div class="preview-pane">
+      <button class="design-toggle" id="design-toggle" aria-expanded="true">
+        <span>خيارات التصميم</span>
+        <span class="caret" aria-hidden="true"></span>
+      </button>
+
+      <div class="design-bar" id="design-bar">
+        <div class="design-row">
+          <span class="design-label">القالب</span>
+          <div class="chips scroll-x" id="templates"></div>
+        </div>
+        <div class="design-row split">
+          <div class="design-group">
+            <span class="design-label">الخط</span>
+            <div class="chips" id="fonts"></div>
+          </div>
+          <div class="design-group">
+            <span class="design-label">اللون</span>
+            <div class="chips wrap" id="accents"></div>
+          </div>
+          <div class="design-group">
+            <span class="design-label">الكثافة</span>
+            <div class="chips" id="densities"></div>
+          </div>
+          <div class="design-group">
+            <span class="design-label">الاتجاه</span>
+            <button class="chip-btn" id="lang-toggle" type="button">عربي</button>
+          </div>
+          <div class="design-group push">
+            <span class="page-meter" id="page-meter" data-fit="yes">صفحة واحدة</span>
+            <button class="btn tiny" id="autofit" type="button">اضبط لصفحة</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="cv-page" id="page"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== النوافذ والتنبيهات ===================== -->
+<div class="modal-root" id="modal-root" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="modal-head">
+      <h2 id="modal-title"></h2>
+      <button class="icon-only" data-close-modal aria-label="إغلاق"></button>
+    </header>
+    <div class="modal-body" id="modal-body"></div>
+    <footer class="modal-foot" id="modal-foot"></footer>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="src/app.js?v=12"></script>
+</body>
+</html>
